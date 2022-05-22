@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
-  useAuthState,
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -11,7 +10,13 @@ import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import google from "../../images/google.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import { async } from "@firebase/util";
 const Login = () => {
+  const emailRef = useRef("");
+  const PasswordRef = useRef("");
+  const [email, setEmail] = useState("");
   const [signInWithGoogle, guser, gloading, gError] = useSignInWithGoogle(auth);
 
   const {
@@ -23,6 +28,10 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+  /*Reset Password  */
+  const [sendPasswordResetEmail, sending, perror] =
+    useSendPasswordResetEmail(auth);
+
   let siginErroe;
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,22 +39,40 @@ const Login = () => {
 
   useEffect(() => {
     if (user || guser) {
+      console.log(user);
       navigate(from, { replace: true });
     }
   }, [user, guser, from, navigate]);
 
-  if (loading || gloading) {
+  if (loading || gloading || sending) {
     return <Lodeing></Lodeing>;
   }
 
-  if (error || gError) {
+  if (error || gError || perror) {
     siginErroe = (
-      <p className="text-red-600">{error?.message || gError?.message}</p>
+      <p className="text-red-600">
+        {error?.message || gError?.message || perror?.message}
+      </p>
     );
   }
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
+  };
+  // resetPassword
+
+  if (email) {
+  }
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+
+    // if (email) {
+    //   console.log(email);
+    //   await sendPasswordResetEmail(email);
+    //   toast("Sent email");
+    // } else {
+    //   toast("please enter your email address");
+    // }
   };
 
   return (
@@ -60,6 +87,7 @@ const Login = () => {
               </label>
               <input
                 type="email"
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email"
                 className="w-full max-w-xs input input-bordered"
                 {...register("email", {
@@ -67,6 +95,7 @@ const Login = () => {
                     value: true,
                     message: "Email is Required",
                   },
+
                   pattern: {
                     value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                     message: "Provide a valid Email",
@@ -132,6 +161,19 @@ const Login = () => {
                 Create New Account
               </Link>
             </small>
+          </p>
+
+          <p>
+            Forget your Password?
+            <button
+              className=" btn btn-link text-primary pe-autotext-decoration-none"
+              onClick={async () => {
+                await sendPasswordResetEmail(email);
+                toast("Sent email");
+              }}
+            >
+              Reset Password
+            </button>
           </p>
 
           <div className="divider">OR</div>

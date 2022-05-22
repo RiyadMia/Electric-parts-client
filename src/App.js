@@ -6,6 +6,7 @@ import About from "./components/Home/Home/About";
 import Review from "./Pages/Review";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="" element></Route>
         <Route path="" element></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
