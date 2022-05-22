@@ -17,7 +17,10 @@ const Services = () => {
     <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  my-16">
       {services.map((service) => (
         <>
-          <div class="card card-compact w-96 bg-base-100 shadow-xl">
+          <div
+            class="card card-compact w-96 bg-base-100 shadow-xl"
+            key={service._id}
+          >
             <figure>
               <img
                 style={{ width: "200px", height: "200px" }}
