@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Hooks from "../Hooks/Hooks";
+import BookingMordal from "./BookingMordal";
 
 const Review = () => {
   const [services, setServices] = Hooks([]);
+  const [booking, setBooking] = useState(null);
   return (
     <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  my-16">
       {services.map((service) => (
@@ -28,14 +30,27 @@ const Review = () => {
               <p> {service.description}</p>
               <div class="card-actions justify-end">
                 <div class="badge badge-outline">Fashion</div>
-                <div class="badge badge-outline">
-                  <button> Products</button>
+                <div>
+                  <label
+                    onClick={() => setBooking(service)}
+                    for="my-modal-6"
+                    class="btn modal-button"
+                  >
+                    Booking
+                  </label>
                 </div>
               </div>
             </div>
           </div>
         </>
       ))}
+
+      {booking && (
+        <BookingMordal
+          booking={booking}
+          setBooking={setBooking}
+        ></BookingMordal>
+      )}
     </div>
   );
 };

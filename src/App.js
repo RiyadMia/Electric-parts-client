@@ -7,7 +7,7 @@ import Review from "./Pages/Review";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
 import { ToastContainer } from "react-toastify";
-
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className=" mx-16">
