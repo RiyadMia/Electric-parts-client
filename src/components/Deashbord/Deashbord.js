@@ -28,7 +28,7 @@ const Deashbord = () => {
               <>
                 <Link to="/deashbord/user">All Users </Link>
                 <Link to="/deashbord/addservice"> Add Electric parts </Link>
-                <Link to="/deashbord/managedoctor"> Manage parts </Link>
+                <Link to="/deashbord/manage"> Manage parts </Link>
               </>
             )}
           </li>

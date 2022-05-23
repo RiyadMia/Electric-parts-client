@@ -27,6 +27,7 @@ const AddItems = () => {
       <div class=" shadow-xl card w-96 bg-base-100">
         <div class="card-body">
           <h2 class=" text-center text-3xl font-bold mb-3 ">Add Youe Items </h2>
+
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="w-full max-w-xs gap-3 form-control">
               <input
