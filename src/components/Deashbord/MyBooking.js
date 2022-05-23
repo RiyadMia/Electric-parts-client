@@ -1,3 +1,4 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
@@ -16,7 +17,15 @@ const MyBooking = () => {
           authorization: `Beare ${localStorage.getItem("accessToken")}`,
         },
       })
-        .then((req) => req.json())
+        .then((res) => {
+          console.log("res", res);
+          if (res.status === 401 || res.status === 403) {
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            navigate("/");
+          }
+          return res.json();
+        })
         .then((data) => setMyBooking(data));
     }
   }, [user]);

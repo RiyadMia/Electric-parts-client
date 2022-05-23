@@ -11,9 +11,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Deashbord from "./components/Deashbord/Deashbord";
 import MyBooking from "./components/Deashbord/MyBooking";
 import MyReview from "./components/Deashbord/MyReview";
+import Users from "./components/Deashbord/Users";
 function App() {
   return (
-    <div className=" mx-16">
+    <div className="mx-16 ">
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -23,6 +24,7 @@ function App() {
         <Route path="signup" element={<Signup></Signup>}></Route>
         <Route path="deashbord" element={<Deashbord></Deashbord>}>
           <Route index element={<MyBooking></MyBooking>}></Route>
+          <Route path="user" element={<Users></Users>}></Route>
           <Route path="myreview" element={<MyReview></MyReview>}></Route>
         </Route>
 

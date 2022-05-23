@@ -24,6 +24,7 @@ const Deashbord = () => {
           </li>
           <li>
             <Link to="/deashbord/myreview">My Review </Link>
+            <Link to="/deashbord/user"> All Users</Link>
             {/* {admin && ( */}
             {/* // <> */}
             {/* <Link to="/deashbord/user">All Users </Link> */}
