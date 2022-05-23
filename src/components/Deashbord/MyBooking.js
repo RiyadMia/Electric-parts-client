@@ -11,12 +11,15 @@ const MyBooking = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/booking?userEmail=${user.email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Beare ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        ` https://mighty-inlet-62276.herokuapp.com/booking?userEmail=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Beare ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => {
           console.log("res", res);
           if (res.status === 401 || res.status === 403) {

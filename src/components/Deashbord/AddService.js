@@ -8,7 +8,7 @@ const AddItems = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/deashbord/addservice";
   const onSubmit = (data) => {
-    const url = `http://localhost:5000/service`;
+    const url = ` https://mighty-inlet-62276.herokuapp.com/service`;
     fetch(url, {
       method: "POST",
       headers: {

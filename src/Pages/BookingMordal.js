@@ -26,7 +26,7 @@ const BookingMordal = ({ booking, setBooking }) => {
     //   toast("minimam 50");
     // }
 
-    fetch("http://localhost:5000/booking", {
+    fetch(" https://mighty-inlet-62276.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",

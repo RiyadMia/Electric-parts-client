@@ -12,7 +12,7 @@ const CheckoutForm = ({ booking }) => {
   const { _id, price, parts, userEmail } = booking;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch(" https://mighty-inlet-62276.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -70,7 +70,7 @@ const CheckoutForm = ({ booking }) => {
         appointment: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/booking/${_id}`, {
+      fetch(`https://mighty-inlet-62276.herokuapp.com/booking/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
