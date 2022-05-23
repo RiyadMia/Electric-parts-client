@@ -8,14 +8,23 @@ const BookingMordal = ({ booking, setBooking }) => {
 
   const hendelBooking = (event) => {
     event.preventDefault();
+
     const booking = {
       partsId: _id,
       parts: name,
       price,
+      qun: event.target.quantity.value,
       userEmail: user.email,
       userName: user.displayName,
       phone: event.target.phone.value,
     };
+    // if (10 === quantity) {
+    //   const qun = event.target.quantity.value;
+    //   console.log(qun);
+    //   return qun;
+    // } else {
+    //   toast("minimam 50");
+    // }
 
     fetch("http://localhost:5000/booking", {
       method: "POST",

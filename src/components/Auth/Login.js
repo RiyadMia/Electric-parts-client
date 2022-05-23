@@ -13,6 +13,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { async } from "@firebase/util";
+import useToken from "../../Hooks/useToken";
+
 const Login = () => {
   const emailRef = useRef("");
   const PasswordRef = useRef("");
@@ -31,18 +33,19 @@ const Login = () => {
   /*Reset Password  */
   const [sendPasswordResetEmail, sending, perror] =
     useSendPasswordResetEmail(auth);
-
+  const [token] = useToken(user || guser);
+  console.log(token);
   let siginErroe;
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (user || guser) {
+    if (token) {
       console.log(user);
       navigate(from, { replace: true });
     }
-  }, [user, guser, from, navigate]);
+  }, [token, from, navigate]);
 
   if (loading || gloading || sending) {
     return <Lodeing></Lodeing>;
@@ -59,6 +62,7 @@ const Login = () => {
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
   };
+
   // resetPassword
 
   if (email) {

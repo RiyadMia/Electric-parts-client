@@ -9,6 +9,8 @@ import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Lodeing from "../../Shear/Lodeing";
 import google from "../../images/google.png";
+import useToken from "../../Hooks/useToken";
+
 const Signup = () => {
   const [signInWithGoogle, guser, gloading, gError] = useSignInWithGoogle(auth);
   const {
@@ -21,6 +23,8 @@ const Signup = () => {
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+  const [token] = useToken(user || guser);
+  console.log(token);
   const navigate = useNavigate();
 
   let signInError;
@@ -38,7 +42,7 @@ const Signup = () => {
     );
   }
 
-  if (user || guser) {
+  if (token) {
     navigate("/");
   }
 

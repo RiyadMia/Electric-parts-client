@@ -8,6 +8,9 @@ import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Deashbord from "./components/Deashbord/Deashbord";
+import MyBooking from "./components/Deashbord/MyBooking";
+import MyReview from "./components/Deashbord/MyReview";
 function App() {
   return (
     <div className=" mx-16">
@@ -18,8 +21,11 @@ function App() {
         <Route path="review" element={<Review></Review>}></Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<Signup></Signup>}></Route>
-        <Route path="" element></Route>
-        <Route path="" element></Route>
+        <Route path="deashbord" element={<Deashbord></Deashbord>}>
+          <Route index element={<MyBooking></MyBooking>}></Route>
+          <Route path="myreview" element={<MyReview></MyReview>}></Route>
+        </Route>
+
         <Route path="" element></Route>
         <Route path="" element></Route>
       </Routes>
