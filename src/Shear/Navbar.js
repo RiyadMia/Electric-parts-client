@@ -15,11 +15,12 @@ const Navbar = () => {
       <li>
         <Link to={"/"}>Home</Link>
       </li>
-
+      <li>
+        <Link to={"/blogs"}>Blogs</Link>
+      </li>
       <li>
         <Link to={"/review"}>Review</Link>
       </li>
-
       <li>
         <Link to={"/about"}>About</Link>
       </li>
@@ -30,11 +31,7 @@ const Navbar = () => {
       )}
       <li>
         {user ? (
-          <button
-            onClick={logout}
-            className="btn 
-btn-ghost"
-          >
+          <button onClick={logout} className="btn btn-ghost">
             SIGN OUT
           </button>
         ) : (

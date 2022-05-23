@@ -15,6 +15,8 @@ import Users from "./components/Deashbord/Users";
 import RequireAdmin from "./components/Auth/RequireAdmin";
 import AddService from "./components/Deashbord/AddService";
 import ManageItems from "./components/Deashbord/ManageItems";
+import Payment from "./components/Deashbord/Payment";
+import Blogs from "./Blogs/Blogs";
 function App() {
   return (
     <div className="mx-16 ">
@@ -23,6 +25,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="review" element={<Review></Review>}></Route>
+        <Route path="blogs" element={<Blogs></Blogs>}></Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<Signup></Signup>}></Route>
         <Route path="deashbord" element={<Deashbord></Deashbord>}>
@@ -45,6 +48,7 @@ function App() {
           ></Route>
 
           <Route path="myreview" element={<MyReview></MyReview>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
         </Route>
         <Route
           path="/deashbord/addservice"
