@@ -9,7 +9,7 @@ const Review = () => {
     <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  my-16">
       {services.map((service) => (
         <>
-          <div class="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-96 bg-base-100 shadow-xl">
             <figure>
               <img
                 style={{ width: "200px", height: "200px" }}
@@ -17,10 +17,10 @@ const Review = () => {
                 alt="Shoes"
               />
             </figure>
-            <div class="card-body">
-              <h2 class="card-title font-bold text-2xl">
+            <div className="card-body">
+              <h2 className="card-title font-bold text-2xl">
                 {service.name}
-                <div class="badge badge-secondary">NEW</div>
+                <div className="badge badge-secondary">NEW</div>
               </h2>
               <h2 className="text-xl font-bold">price: ${service.price} </h2>
               <h2 className="text-xl font-bold">
@@ -28,13 +28,13 @@ const Review = () => {
               </h2>
               <p className="text-center font-bold">Description</p>
               <p> {service.description}</p>
-              <div class="card-actions justify-end">
-                <div class="badge badge-outline">Fashion</div>
+              <div className="card-actions justify-end">
+                <div className="badge badge-outline">Fashion</div>
                 <div>
                   <label
                     onClick={() => setBooking(service)}
                     for="my-modal-6"
-                    class="btn modal-button"
+                    className="btn modal-button"
                   >
                     Booking
                   </label>

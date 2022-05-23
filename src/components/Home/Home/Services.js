@@ -7,7 +7,7 @@ const Services = () => {
       {services.map((service) => (
         <>
           <div
-            class="card card-compact w-96 bg-base-100 shadow-xl"
+            className="card card-compact w-96 bg-base-100 shadow-xl"
             key={service._id}
           >
             <figure>
@@ -17,16 +17,16 @@ const Services = () => {
                 alt="Shoes"
               />
             </figure>
-            <div class="card-body">
-              <h2 class="card-title font-bold text-2xl">{service.name} </h2>
+            <div className="card-body">
+              <h2 className="card-title font-bold text-2xl">{service.name} </h2>
               <h2 className="text-xl font-bold">price: ${service.price} </h2>
               <h2 className="text-xl font-bold">
                 quantity :{service.quantity}
               </h2>
               <p className="text-center font-bold">Description</p>
               <p> {service.description}</p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Buy Now</button>
               </div>
             </div>
           </div>

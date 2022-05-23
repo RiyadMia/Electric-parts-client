@@ -1,7 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 
-const CheckoutForm = ({ appoinment }) => {
+const CheckoutForm = ({ booking }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
@@ -9,7 +9,7 @@ const CheckoutForm = ({ appoinment }) => {
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-  const { _id, price, parts, userEmail } = appoinment;
+  const { _id, price, parts, userEmail } = booking;
 
   useEffect(() => {
     fetch("http://localhost:5000/create-payment-intent", {
@@ -45,6 +45,7 @@ const CheckoutForm = ({ appoinment }) => {
     setCardError(error?.message || "");
     setSuccess("");
     setProcessing(true);
+
     // confirm card payment
     const { paymentIntent, error: intentError } =
       await stripe.confirmCardPayment(clientSecret, {
@@ -56,6 +57,7 @@ const CheckoutForm = ({ appoinment }) => {
           },
         },
       });
+
     if (intentError) {
       setCardError(intentError?.message);
       setProcessing(false);
@@ -64,7 +66,6 @@ const CheckoutForm = ({ appoinment }) => {
       setTransactionId(paymentIntent.id);
       console.log(paymentIntent);
       setSuccess("Congrats! Your payment is completed.");
-      //store payment on database
       const payment = {
         appointment: _id,
         transactionId: paymentIntent.id,
@@ -117,8 +118,8 @@ const CheckoutForm = ({ appoinment }) => {
         <div className="text-green-500">
           <p>{success} </p>
           <p>
-            Your transaction Id:{" "}
-            <span className="font-bold text-orange-500">{transactionId}</span>{" "}
+            Your transaction Id :
+            <span className="font-bold text-orange-500"> {transactionId} </span>
           </p>
         </div>
       )}

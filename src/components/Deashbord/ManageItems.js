@@ -24,8 +24,8 @@ const ManageItems = () => {
   };
 
   return (
-    <div class="overflow-x-auto mt-5">
-      <table class="table w-full">
+    <div className="overflow-x-auto mt-5">
+      <table className="table w-full">
         <thead>
           <tr>
             <th></th>
@@ -52,7 +52,7 @@ const ManageItems = () => {
               <td>{service.quantity} </td>
               <td>
                 <button
-                  class="btn btn-outline btn-error"
+                  className="btn btn-outline btn-error"
                   onClick={() => handleDelete(service._id)}
                 >
                   Delete

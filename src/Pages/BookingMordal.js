@@ -48,16 +48,16 @@ const BookingMordal = ({ booking, setBooking }) => {
   };
   return (
     <div className="">
-      <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <label
             for="my-modal-6"
-            class="btn btn-sm btn-circle absolute right-2 top-2"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
-          <h3 class="font-bold text-lg">Booking for : {name}</h3>
+          <h3 className="font-bold text-lg">Booking for : {name}</h3>
 
           <form
             onSubmit={hendelBooking}

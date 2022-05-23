@@ -81,9 +81,9 @@ const Login = () => {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <div class=" shadow-xl card w-96 bg-base-100">
-        <div class="card-body">
-          <h2 class=" text-center text-3xl font-bold ">Login</h2>
+      <div className=" shadow-xl card w-96 bg-base-100">
+        <div className="card-body">
+          <h2 className=" text-center text-3xl font-bold ">Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="w-full max-w-xs form-control">
               <label className="label">
@@ -183,7 +183,7 @@ const Login = () => {
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            class="btn btn-outline gap-4"
+            className="btn btn-outline gap-4"
           >
             <img className="google" src={google} alt="" />
             <span> Continue With Google</span>
