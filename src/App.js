@@ -12,6 +12,8 @@ import Deashbord from "./components/Deashbord/Deashbord";
 import MyBooking from "./components/Deashbord/MyBooking";
 import MyReview from "./components/Deashbord/MyReview";
 import Users from "./components/Deashbord/Users";
+import RequireAdmin from "./components/Auth/RequireAdmin";
+import AddService from "./components/Deashbord/AddService";
 function App() {
   return (
     <div className="mx-16 ">
@@ -24,10 +26,25 @@ function App() {
         <Route path="signup" element={<Signup></Signup>}></Route>
         <Route path="deashbord" element={<Deashbord></Deashbord>}>
           <Route index element={<MyBooking></MyBooking>}></Route>
-          <Route path="user" element={<Users></Users>}></Route>
+          <Route
+            path="user"
+            element={
+              <RequireAdmin>
+                <Users></Users>
+              </RequireAdmin>
+            }
+          ></Route>
+
           <Route path="myreview" element={<MyReview></MyReview>}></Route>
         </Route>
-
+        <Route
+          path="/deashbord/addservice"
+          element={
+            <RequireAdmin>
+              <AddService></AddService>
+            </RequireAdmin>
+          }
+        ></Route>
         <Route path="" element></Route>
         <Route path="" element></Route>
       </Routes>
