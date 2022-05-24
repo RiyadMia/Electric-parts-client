@@ -6,7 +6,7 @@ const ParChoice = () => {
   const [services, setServices] = Hooks([]);
   const [booking, setBooking] = useState(null);
   return (
-    <div className="grid gap-12 my-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-12 mx-16 my-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {services.map((service) => (
         <>
           <div className="shadow-xl card w-96 bg-base-100">

@@ -3,7 +3,7 @@ import img from "../images/pg.png";
 
 const MyProtfolio = () => {
   return (
-    <div class="hero min-h-screen bg-base-200 gap-7      ">
+    <div class="hero min-h-screen bg-base-200 gap-7       ">
       <div class="hero-content flex-col lg:flex-row-reverse">
         <img src={img} class="max-w-sm rounded-lg shadow-2xl" />
         <div>

@@ -8,7 +8,7 @@ const Review = () => {
       .then((data) => setReview(data));
   }, []);
   return (
-    <div className="grid gap-12 my-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-12 mx-16 my-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {review.map((r) => (
         <div class="card w-96 bg-base-100 shadow-xl ">
           <div class="card-body">

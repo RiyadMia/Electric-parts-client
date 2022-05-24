@@ -23,10 +23,12 @@ const Deashbord = () => {
             <Link to="/deashbord/myprofile">My Profile</Link>
           </li>
           <li>
-            <Link to="/deashbord">My Orders</Link>
-          </li>
-          <li>
-            <Link to="/deashbord/myreview">Add A Review </Link>
+            {!admin && (
+              <>
+                <Link to="/deashbord">My Orders</Link>
+                <Link to="/deashbord/myreview">Add A Review </Link>
+              </>
+            )}
             {admin && (
               <>
                 <Link to="/deashbord/user">Make Admin</Link>

@@ -12,14 +12,11 @@ const Navbar = () => {
   };
   const munus = (
     <>
-      <li></li>
-
       <li>
+        <Link to={"/blogs"}>Blogs</Link>
+        <Link to={"/protfilio"}>My Protfolio</Link>
         <Link to={"/parchoice"}>ParChoice</Link>
         <Link to={"/review"}>Review</Link>
-      </li>
-      <li>
-        <Link to={"/about"}>About</Link>
       </li>
       {user && (
         <li>
@@ -65,17 +62,9 @@ const Navbar = () => {
             {munus}
           </ul>
         </div>
-        <div className="flex gap-3 ">
-          <p>
-            <Link to="/"> Home </Link>
-          </p>
-          <p>
-            <Link to={"/blogs"}>Blogs</Link>
-          </p>
-          <p>
-            <Link to={"/protfilio"}>My Protfolio</Link>
-          </p>
-        </div>
+        <p className=" ml-9">
+          <Link to="/"> Home </Link>
+        </p>
       </div>
       <div className="hidden navbar-center lg:flex">
         <ul className="p-0 menu menu-horizontal">{munus}</ul>

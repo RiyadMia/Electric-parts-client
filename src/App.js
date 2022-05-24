@@ -2,7 +2,6 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Shear/Navbar";
 import Home from "./components/Home/Home/Home";
-import About from "./components/Home/Home/About";
 import ParChoice from "./Pages/ParChoice";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
@@ -21,17 +20,24 @@ import MyProfile from "./components/Deashbord/MyProfile";
 import MyProtfolio from "./Pages/MyProtfolio";
 import Review from "./components/Deashbord/Review";
 import Profile from "./components/Deashbord/Profile";
+import RequireAuth from "./components/Auth/RequireAuth";
 function App() {
   return (
-    <div className="mx-16 ">
+    <div>
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/about" element={<About></About>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="/review" element={<Review></Review>}></Route>
         <Route path="protfilio" element={<MyProtfolio></MyProtfolio>}></Route>
-        <Route path="parchoice" element={<ParChoice></ParChoice>}></Route>
+        <Route
+          path="parchoice"
+          element={
+            <RequireAuth>
+              <ParChoice></ParChoice>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="blogs" element={<Blogs></Blogs>}></Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<Signup></Signup>}></Route>
