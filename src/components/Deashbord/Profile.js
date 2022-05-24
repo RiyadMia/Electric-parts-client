@@ -1,18 +1,20 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const Profile = (id) => {
   const imageStorageKey = "dc7c980d43b37d837ac9e55bed5ddca1";
-
+  const [user, loading, error] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     const image = data.image[0];
     const formData = new FormData();
     formData.append("image", image);
 
-    const ur = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
-    fetch(ur, {
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    fetch(url, {
       method: "POST",
       body: formData,
     })
@@ -28,7 +30,7 @@ const Profile = (id) => {
             img: img,
             address: data.address,
           };
-          const url = `http://localhost:5000/profile`;
+          const url = `http://localhost:5000/user/${user.email}`;
           fetch(url, {
             method: "POST",
             headers: {

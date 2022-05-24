@@ -13,11 +13,15 @@ const MyProfile = (id) => {
   }, []);
   return (
     <div class="card w-96 bg-base-100 shadow-xl">
+      <h2 class="card-title">{user.displayName} </h2>
+      <p>Email : {user.email}</p>
       <figure class="px-10 pt-10">
         {profile.map((p) => (
           <div class="avatar">
             <div class="w-24 rounded-full">
               <img src={p.img} />
+              <p>{p.phone}</p>
+              <p>{p.distric}</p>
             </div>
           </div>
         ))}
@@ -26,8 +30,6 @@ const MyProfile = (id) => {
         <button class="btn btn-xs w-26">
           <Link to="/profile">Edit</Link>
         </button>
-        <h2 class="card-title">{user.displayName} </h2>
-        <p>Email : {user.email}</p>
       </div>
     </div>
   );
