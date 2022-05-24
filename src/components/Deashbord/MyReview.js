@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 const MyReview = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    const url = `http://localhost:5000/review`;
+    const url = `https://mighty-inlet-62276.herokuapp.com/review`;
     fetch(url, {
       method: "POST",
       headers: {

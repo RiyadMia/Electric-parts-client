@@ -11,7 +11,6 @@ const MyBooking = () => {
   const location = useLocation();
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
-
   useEffect(() => {
     if (user) {
       fetch(
@@ -39,7 +38,7 @@ const MyBooking = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/booking/${id}
+      const url = `https://mighty-inlet-62276.herokuapp.com/booking/${id}
    `;
       fetch(url, {
         method: "DELETE",
