@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../firebase.init";
 const BookingMordal = ({ booking, setBooking }) => {
   const { _id, name, price, quantity } = booking;
-  const [user, loading, error] = useAuthState(auth);
-
+  const [user] = useAuthState(auth);
+  const [error, setError] = useState("");
+  const [error1, setError1] = useState("");
   const hendelBooking = (event) => {
     event.preventDefault();
 
@@ -18,12 +19,17 @@ const BookingMordal = ({ booking, setBooking }) => {
       userName: user.displayName,
       phone: event.target.phone.value,
     };
-    // if (10 === quantity) {
-    //   const qun = event.target.quantity.value;
-    //   console.log(qun);
-    //   return qun;
-    // } else {
-    //   toast("minimam 50");
+    const qun = event.target.quantity.value;
+
+    if (qun < 50) {
+      setError("quantity  minimam  50 ");
+      return;
+    }
+
+    // if (qun < quantity) {
+    // console.log(quantity);
+    // setError1("quantity");
+    // return;
     // }
 
     fetch(" https://mighty-inlet-62276.herokuapp.com/booking", {
@@ -36,13 +42,6 @@ const BookingMordal = ({ booking, setBooking }) => {
       .then((res) => res.json())
       .then((data) => {
         toast(" Booking  successfull Added", data);
-
-        // if (data.success) {
-        //   console.log(data);
-        //   toast(" Booking  successful set");
-        // } else {
-        //   toast.error("  Already have and Appoinment ");
-        // }
         setBooking(null);
       });
   };
@@ -53,11 +52,11 @@ const BookingMordal = ({ booking, setBooking }) => {
         <div className="modal-box">
           <label
             for="my-modal-6"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
+            className="absolute btn btn-sm btn-circle right-2 top-2"
           >
             ✕
           </label>
-          <h3 className="font-bold text-lg">Booking for : {name}</h3>
+          <h3 className="text-lg font-bold">Booking for : {name}</h3>
 
           <form
             onSubmit={hendelBooking}
@@ -78,10 +77,12 @@ const BookingMordal = ({ booking, setBooking }) => {
             <input
               type="number"
               name="quantity"
-              value={quantity}
               placeholder=" Your quantity"
               className="w-full max-w-xs input input-bordered"
             />
+            <p className="text-red-600">{error}</p>
+            <p className="text-red-600">{error1}</p>
+
             <input
               type="number"
               name="phone"

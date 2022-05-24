@@ -32,6 +32,7 @@ const Deashbord = () => {
             {admin && (
               <>
                 <Link to="/deashbord/user">Make Admin</Link>
+                <Link to="/deashbord/manageorder">Manage All Orders</Link>
                 <Link to="/deashbord/addservice"> Add Electric parts </Link>
                 <Link to="/deashbord/manage"> Manage parts </Link>
               </>

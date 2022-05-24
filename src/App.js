@@ -21,6 +21,7 @@ import MyProtfolio from "./Pages/MyProtfolio";
 import Review from "./components/Deashbord/Review";
 import Profile from "./components/Deashbord/Profile";
 import RequireAuth from "./components/Auth/RequireAuth";
+import ManageOrders from "./components/Deashbord/ManageOrders";
 function App() {
   return (
     <div>
@@ -59,7 +60,14 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
-
+          <Route
+            path="manageorder"
+            element={
+              <RequireAdmin>
+                <ManageOrders></ManageOrders>
+              </RequireAdmin>
+            }
+          ></Route>
           <Route path="myreview" element={<MyReview></MyReview>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
