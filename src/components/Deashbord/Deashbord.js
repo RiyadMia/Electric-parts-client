@@ -20,7 +20,7 @@ const Deashbord = () => {
         <label htmlFor="dashbord-sidebar" className="drawer-overlay"></label>
         <ul className="p-4 overflow-y-auto menu w-80 bg-base-100 text-base-content">
           <li>
-            <Link to="/deashbord/profile">My Profile</Link>
+            <Link to="/deashbord/myprofile">My Profile</Link>
           </li>
           <li>
             <Link to="/deashbord">My Orders</Link>

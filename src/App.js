@@ -20,6 +20,7 @@ import Blogs from "./Blogs/Blogs";
 import MyProfile from "./components/Deashbord/MyProfile";
 import MyProtfolio from "./Pages/MyProtfolio";
 import Review from "./components/Deashbord/Review";
+import Profile from "./components/Deashbord/Profile";
 function App() {
   return (
     <div className="mx-16 ">
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/about" element={<About></About>}></Route>
+        <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="/review" element={<Review></Review>}></Route>
         <Route path="protfilio" element={<MyProtfolio></MyProtfolio>}></Route>
         <Route path="parchoice" element={<ParChoice></ParChoice>}></Route>
@@ -53,7 +55,7 @@ function App() {
           ></Route>
 
           <Route path="myreview" element={<MyReview></MyReview>}></Route>
-          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
         </Route>
         <Route
