@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Hooks from "../../../Hooks/Hooks";
 const Services = () => {
   const [services, setServices] = Hooks([]);
   return (
-    <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  my-16">
+    <div className="grid gap-12 my-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {services.map((service) => (
         <>
           <div
-            className="card card-compact w-96 bg-base-100 shadow-xl"
+            className="shadow-xl card card-compact w-96 bg-base-100"
             key={service._id}
           >
             <figure>
@@ -18,15 +19,17 @@ const Services = () => {
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title font-bold text-2xl">{service.name} </h2>
+              <h2 className="text-2xl font-bold card-title">{service.name} </h2>
               <h2 className="text-xl font-bold">price: ${service.price} </h2>
               <h2 className="text-xl font-bold">
                 quantity :{service.quantity}
               </h2>
-              <p className="text-center font-bold">Description</p>
+              <p className="font-bold text-center">Description</p>
               <p> {service.description}</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
+              <div className="justify-end card-actions">
+                <button className="mt-5 btn btn-primary">
+                  <Link to="/parchoice">Parchoice</Link>
+                </button>
               </div>
             </div>
           </div>

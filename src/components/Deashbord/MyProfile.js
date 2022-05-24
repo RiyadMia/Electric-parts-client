@@ -7,7 +7,7 @@ const MyProfile = (id) => {
   const [user, loading, error] = useAuthState(auth);
   const [profile, setprofile] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/profile`)
+    fetch(`https://mighty-inlet-62276.herokuapp.com/profile`)
       .then((res) => res.json())
       .then((data) => setprofile(data));
   }, []);
