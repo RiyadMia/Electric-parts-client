@@ -24,12 +24,11 @@ const AddItems = () => {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className=" shadow-xl card w-96 bg-base-100">
+      <div className="shadow-xl card w-96 bg-base-100">
         <div className="card-body">
-          <h2 className=" text-center text-3xl font-bold mb-3 ">
-            Add Youe Items{" "}
+          <h2 className="mb-3 text-3xl font-bold text-center ">
+            Add Youe Items
           </h2>
-
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="w-full max-w-xs gap-3 form-control">
               <input

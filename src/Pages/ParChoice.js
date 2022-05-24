@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import Hooks from "../Hooks/Hooks";
 import BookingMordal from "./BookingMordal";
 
-const Review = () => {
+const ParChoice = () => {
   const [services, setServices] = Hooks([]);
   const [booking, setBooking] = useState(null);
   return (
-    <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  my-16">
+    <div className="grid gap-12 my-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {services.map((service) => (
         <>
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="shadow-xl card w-96 bg-base-100">
             <figure>
               <img
                 style={{ width: "200px", height: "200px" }}
@@ -18,7 +18,7 @@ const Review = () => {
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title font-bold text-2xl">
+              <h2 className="text-2xl font-bold card-title">
                 {service.name}
                 <div className="badge badge-secondary">NEW</div>
               </h2>
@@ -26,9 +26,9 @@ const Review = () => {
               <h2 className="text-xl font-bold">
                 quantity :{service.quantity}
               </h2>
-              <p className="text-center font-bold">Description</p>
+              <p className="font-bold text-center">Description</p>
               <p> {service.description}</p>
-              <div className="card-actions justify-end">
+              <div className="justify-end card-actions">
                 <div className="badge badge-outline">Fashion</div>
                 <div>
                   <label
@@ -55,4 +55,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default ParChoice;

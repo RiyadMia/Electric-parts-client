@@ -20,13 +20,16 @@ const Deashbord = () => {
         <label htmlFor="dashbord-sidebar" className="drawer-overlay"></label>
         <ul className="p-4 overflow-y-auto menu w-80 bg-base-100 text-base-content">
           <li>
-            <Link to="/deashbord">My Appoinments</Link>
+            <Link to="/deashbord/profile">My Profile</Link>
           </li>
           <li>
-            <Link to="/deashbord/myreview">My Review </Link>
+            <Link to="/deashbord">My Orders</Link>
+          </li>
+          <li>
+            <Link to="/deashbord/myreview">Add A Review </Link>
             {admin && (
               <>
-                <Link to="/deashbord/user">All Users </Link>
+                <Link to="/deashbord/user">Make Admin</Link>
                 <Link to="/deashbord/addservice"> Add Electric parts </Link>
                 <Link to="/deashbord/manage"> Manage parts </Link>
               </>

@@ -12,13 +12,10 @@ const Navbar = () => {
   };
   const munus = (
     <>
+      <li></li>
+
       <li>
-        <Link to={"/"}>Home</Link>
-      </li>
-      <li>
-        <Link to={"/blogs"}>Blogs</Link>
-      </li>
-      <li>
+        <Link to={"/parchoice"}>ParChoice</Link>
         <Link to={"/review"}>Review</Link>
       </li>
       <li>
@@ -68,9 +65,17 @@ const Navbar = () => {
             {munus}
           </ul>
         </div>
-        <a className="text-xl normal-case btn btn-ghost">
-          <Link to="/"> Electric pars</Link>
-        </a>
+        <div className="flex gap-3 ">
+          <p>
+            <Link to="/"> Home </Link>
+          </p>
+          <p>
+            <Link to={"/blogs"}>Blogs</Link>
+          </p>
+          <p>
+            <Link to={"/protfilio"}>My Protfolio</Link>
+          </p>
+        </div>
       </div>
       <div className="hidden navbar-center lg:flex">
         <ul className="p-0 menu menu-horizontal">{munus}</ul>

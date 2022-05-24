@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./Shear/Navbar";
 import Home from "./components/Home/Home/Home";
 import About from "./components/Home/Home/About";
-import Review from "./Pages/Review";
+import ParChoice from "./Pages/ParChoice";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
 import { ToastContainer } from "react-toastify";
@@ -17,6 +17,9 @@ import AddService from "./components/Deashbord/AddService";
 import ManageItems from "./components/Deashbord/ManageItems";
 import Payment from "./components/Deashbord/Payment";
 import Blogs from "./Blogs/Blogs";
+import MyProfile from "./components/Deashbord/MyProfile";
+import MyProtfolio from "./Pages/MyProtfolio";
+import Review from "./components/Deashbord/Review";
 function App() {
   return (
     <div className="mx-16 ">
@@ -24,7 +27,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/about" element={<About></About>}></Route>
-        <Route path="review" element={<Review></Review>}></Route>
+        <Route path="/review" element={<Review></Review>}></Route>
+        <Route path="protfilio" element={<MyProtfolio></MyProtfolio>}></Route>
+        <Route path="parchoice" element={<ParChoice></ParChoice>}></Route>
         <Route path="blogs" element={<Blogs></Blogs>}></Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<Signup></Signup>}></Route>
@@ -48,6 +53,7 @@ function App() {
           ></Route>
 
           <Route path="myreview" element={<MyReview></MyReview>}></Route>
+          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
         </Route>
         <Route
