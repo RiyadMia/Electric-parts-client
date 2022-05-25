@@ -5,14 +5,19 @@ import Services from "./Services";
 import UserReview from "../../../Pages/UserReview";
 import Contact from "../../../Pages/Contact";
 import Slider from "../../../Pages/Slider";
+import HellowClint from "./HellowClint";
+import NewComeItems from "./NewComeItems";
 
 const Home = () => {
   return (
     <div>
       <Slider></Slider>
+      <NewComeItems></NewComeItems>
       <Banner></Banner>
       <Services></Services>
+      <HellowClint></HellowClint>
       <UserReview></UserReview>
+
       <Contact></Contact>
       <Footer></Footer>
     </div>

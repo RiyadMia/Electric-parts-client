@@ -12,7 +12,7 @@ const Banner = () => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="text-5xl font-bold card-title">New Electric parts</h2>
+        <h2 className="text-5xl font-bold card-title">Old Electric parts</h2>
         <p>
           Click the button to listen on Spotiwhy Having several years of
           experience, Pars Pipe Electric Company has been having the most

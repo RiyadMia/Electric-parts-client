@@ -22,6 +22,7 @@ import Review from "./components/Deashbord/Review";
 import Profile from "./components/Deashbord/Profile";
 import RequireAuth from "./components/Auth/RequireAuth";
 import ManageOrders from "./components/Deashbord/ManageOrders";
+import NoteFound from "./Pages/NoteFound";
 
 function App() {
   return (
@@ -83,7 +84,7 @@ function App() {
           }
         ></Route>
         <Route path="" element></Route>
-        <Route path="" element></Route>
+        <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>
