@@ -9,7 +9,7 @@ const ManageOrders = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch(" https://mighty-inlet-62276.herokuapp.com/user", {
+    fetch("http://localhost:5000/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -22,7 +22,6 @@ const ManageOrders = () => {
 
   return (
     <div>
-      <h2 className="text-2xl">All Users: {users.length}</h2>
       <div className="overflow-x-auto">
         {users.map((users) => (
           <ManageAdmin

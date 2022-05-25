@@ -1,15 +1,15 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, Navigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import Hooks from "../../Hooks/Hooks";
 
 const ManageAdmin = ({ users }) => {
   const [myBooking, setMyBooking] = useState([]);
-  const [user] = useAuthState(auth);
   const { email, role } = users;
-
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   useEffect(() => {
     if (user) {
       fetch(
@@ -22,52 +22,56 @@ const ManageAdmin = ({ users }) => {
         }
       )
         .then((res) => {
-          // console.log("res", res);
+          console.log("res", res);
           if (res.status === 401 || res.status === 403) {
             signOut(auth);
             localStorage.removeItem("accessToken");
-            Navigate("/");
+            navigate("/");
           }
           return res.json();
         })
         .then((data) => setMyBooking(data));
     }
   }, [user]);
+
   return (
-    <div className="mt-4 text-center">
-      <h1 className="text-2xl font-bold "> {users.email}</h1>
-      <div className="mt-6 overflow-x-auto">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Quantity</th>
-              <th>Parts</th>
-              <th>Payment</th>
+    <div className="mt-6 overflow-x-auto">
+      <h1 className="mt-4 mb-6 text-2xl font-bold text-center ">
+        {" "}
+        {users.email}
+      </h1>
+      <table className="table w-full">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Quantity</th>
+            <th>Parts</th>
+            <th>Payment</th>
+          </tr>
+        </thead>
+        <tbody>
+          {myBooking.map((book, index) => (
+            <tr key={book._id}>
+              <th>{index + 1}</th>
+              <td>{book.userName}</td>
+              <td>{book.userEmail}</td>
+              <td>{book.qun}</td>
+              <td>{book.parts}</td>
+              <td>
+                {book.price && book.paid && (
+                  <div className="">
+                    <p>
+                      <span className=" text-success">Panding</span>
+                    </p>
+                  </div>
+                )}
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {myBooking.map((book, index) => (
-              <tr key={book._id}>
-                <th>{index + 1}</th>
-                <td>{book.userName}</td>
-                <td>{book.qun}</td>
-                <td>{book.parts}</td>
-                <td>
-                  {book.price && book.paid && (
-                    <div className="">
-                      <p>
-                        <button className=" text-success">Pending</button>
-                      </p>
-                    </div>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

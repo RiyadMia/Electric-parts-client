@@ -10,31 +10,33 @@ const MyProfile = () => {
   const [profile, setprofile] = useState([]);
   const { id, email } = useParams();
 
-  useEffect(() => {
-    if (user) {
-      fetch(`http://localhost:5000/user/admin/${email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Beare ${localStorage.getItem("accessToken")}`,
-        },
-      })
-        .then((res) => {
-          if (res.status === 401 || res.status === 403) {
-            signOut(auth);
-            localStorage.removeItem("accessToken");
-            Navigate("/");
-          }
-          return res.json();
-        })
-        .then((data) => setprofile(data));
-    }
-  }, [user]);
+  // useEffect(() => {
+  // if (user) {
+  // // fetch(`https://mighty-inlet-62276.herokuapp.com/user/admin/${email}`, {
+  // method: "GET",
+  // headers: {
+  // // authorization: `Beare ${localStorage.getItem("accessToken")}`,
+  // },
+  // })
+  // .then((res) => {
+  // if (res.status === 401 || res.status === 403) {
+  // signOut(auth);
+  // localStorage.removeItem("accessToken");
+  // Navigate("/");
+  // }
+  // return res.json();
+  // })
+  // .then((data) => setprofile(data));
+  // }
+  // }, [user]);
+
+  //
   if (loading) {
     return <Lodeing></Lodeing>;
   }
 
   // useEffect(() => {
-  // // fetch(`http://localhost:5000/profile?userEmail=${user.email}`)
+  // // fetch(`https://mighty-inlet-62276.herokuapp.com/profile?userEmail=${user.email}`)
   // .then((res) => res.json())
   // .then((data) => setprofile(data));
   // }, []);

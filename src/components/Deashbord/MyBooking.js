@@ -82,7 +82,7 @@ const MyBooking = () => {
                 {book.price && !book.paid && (
                   <button
                     onClick={() => handleDelete(book._id)}
-                    className="btn btn-ghost text-red-600"
+                    className="text-red-600 btn btn-ghost"
                   >
                     Cancel
                   </button>

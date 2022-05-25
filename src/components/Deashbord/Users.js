@@ -8,20 +8,24 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch(" https://mighty-inlet-62276.herokuapp.com/user", {
+    fetch("https://mighty-inlet-62276.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     }).then((res) => res.json())
   );
+
   if (isLoading) {
     return <Lodeing></Lodeing>;
   }
 
   return (
     <div>
-      <h2 className="text-2xl">All Users: {users.length}</h2>
+      <h2 className="float-none text-2xl font-bold text-center">
+        All Users: {users.length}
+      </h2>
+
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
