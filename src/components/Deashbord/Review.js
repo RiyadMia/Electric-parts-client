@@ -10,9 +10,9 @@ const Review = () => {
   return (
     <div className="grid gap-12 mx-16 my-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {review.map((r) => (
-        <div class="card w-96 bg-base-100 shadow-xl ">
-          <div class="card-body">
-            <h2 class="card-title"> {r.name}</h2>
+        <div className="card w-96 bg-base-100 shadow-xl ">
+          <div className="card-body">
+            <h2 className="card-title"> {r.name}</h2>
             <p>{r.rating} star</p>
             <p>{r.review}</p>
           </div>

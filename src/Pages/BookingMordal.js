@@ -32,7 +32,7 @@ const BookingMordal = ({ booking, setBooking }) => {
     // return;
     // }
 
-    fetch(" https://mighty-inlet-62276.herokuapp.com/booking", {
+    fetch("https://mighty-inlet-62276.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -51,7 +51,7 @@ const BookingMordal = ({ booking, setBooking }) => {
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <label
-            for="my-modal-6"
+            htmlFor="my-modal-6"
             className="absolute btn btn-sm btn-circle right-2 top-2"
           >
             ✕

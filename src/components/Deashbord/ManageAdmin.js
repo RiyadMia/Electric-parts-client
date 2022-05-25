@@ -22,7 +22,7 @@ const ManageAdmin = ({ users }) => {
         }
       )
         .then((res) => {
-          console.log("res", res);
+          // console.log("res", res);
           if (res.status === 401 || res.status === 403) {
             signOut(auth);
             localStorage.removeItem("accessToken");
@@ -58,7 +58,7 @@ const ManageAdmin = ({ users }) => {
                   {book.price && book.paid && (
                     <div className="">
                       <p>
-                        <span className=" text-success">Pending</span>
+                        <button className=" text-success">Pending</button>
                       </p>
                     </div>
                   )}

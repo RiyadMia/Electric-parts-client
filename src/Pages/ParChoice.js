@@ -33,7 +33,7 @@ const ParChoice = () => {
                 <div>
                   <label
                     onClick={() => setBooking(service)}
-                    for="my-modal-6"
+                    htmlFor="my-modal-6"
                     className="btn modal-button"
                   >
                     Booking

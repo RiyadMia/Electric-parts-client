@@ -22,6 +22,7 @@ import Review from "./components/Deashbord/Review";
 import Profile from "./components/Deashbord/Profile";
 import RequireAuth from "./components/Auth/RequireAuth";
 import ManageOrders from "./components/Deashbord/ManageOrders";
+
 function App() {
   return (
     <div>
@@ -43,7 +44,7 @@ function App() {
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<Signup></Signup>}></Route>
         <Route path="deashbord" element={<Deashbord></Deashbord>}>
-          <Route index element={<MyBooking></MyBooking>}></Route>
+          <Route path="mybooking" element={<MyBooking></MyBooking>}></Route>
           <Route
             path="manage"
             element={
@@ -70,6 +71,7 @@ function App() {
           ></Route>
           <Route path="myreview" element={<MyReview></MyReview>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
         </Route>
         <Route

@@ -25,8 +25,8 @@ const Deashbord = () => {
           <li>
             {!admin && (
               <>
-                <Link to="/deashbord">My Orders</Link>
                 <Link to="/deashbord/myreview">Add A Review </Link>
+                <Link to="/deashbord/mybooking">My Orders</Link>
               </>
             )}
             {admin && (
