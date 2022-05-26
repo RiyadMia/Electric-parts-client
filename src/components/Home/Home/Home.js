@@ -7,6 +7,7 @@ import Contact from "../../../Pages/Contact";
 import Slider from "../../../Pages/Slider";
 import HellowClint from "./HellowClint";
 import NewComeItems from "./NewComeItems";
+import Bussince from "./Bussince";
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
       <Services></Services>
       <HellowClint></HellowClint>
       <UserReview></UserReview>
-
+      <Bussince></Bussince>
       <Contact></Contact>
       <Footer></Footer>
     </div>

@@ -37,7 +37,6 @@ const ManageAdmin = ({ users }) => {
   return (
     <div className="mt-6 overflow-x-auto">
       <h1 className="mt-4 mb-6 text-2xl font-bold text-center ">
-        {" "}
         {users.email}
       </h1>
       <table className="table w-full">
@@ -63,7 +62,7 @@ const ManageAdmin = ({ users }) => {
                 {book.price && book.paid && (
                   <div className="">
                     <p>
-                      <span className=" text-success">Panding</span>
+                      <button className=" text-success">Panding</button>
                     </p>
                   </div>
                 )}

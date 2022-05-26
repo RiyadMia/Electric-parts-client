@@ -29,7 +29,6 @@ const ParChoice = () => {
               <p className="font-bold text-center">Description</p>
               <p> {service.description}</p>
               <div className="justify-end card-actions">
-                <div className="badge badge-outline">Fashion</div>
                 <div>
                   <label
                     onClick={() => setBooking(service)}

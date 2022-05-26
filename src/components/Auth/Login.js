@@ -14,10 +14,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { async } from "@firebase/util";
 import useToken from "../../Hooks/useToken";
+import { getValue } from "@testing-library/user-event/dist/utils";
 
 const Login = () => {
-  const emailRef = useRef("");
-  const PasswordRef = useRef("");
   const [email, setEmail] = useState("");
   const [signInWithGoogle, guser, gloading, gError] = useSignInWithGoogle(auth);
 
@@ -65,25 +64,25 @@ const Login = () => {
 
   // resetPassword
 
-  if (email) {
-  }
-  const resetPassword = async () => {
-    const email = emailRef.current.value;
+  // if (email) {
+  // }
 
-    // if (email) {
-    //   console.log(email);
-    //   await sendPasswordResetEmail(email);
-    //   toast("Sent email");
-    // } else {
-    //   toast("please enter your email address");
-    // }
+  const resetPassword = async () => {
+    const email = getValue("email");
+    if (email) {
+      console.log(email);
+      // await sendPasswordResetEmail(email);
+      // toast("Sent email");
+    } else {
+      toast("please enter your email address");
+    }
   };
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className=" shadow-xl card w-96 bg-base-100">
+      <div className="shadow-xl card w-96 bg-base-100">
         <div className="card-body">
-          <h2 className=" text-center text-3xl font-bold ">Login</h2>
+          <h2 className="text-3xl font-bold text-center ">Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="w-full max-w-xs form-control">
               <label className="label">
@@ -161,7 +160,7 @@ const Login = () => {
           <p>
             <small>
               New to Electric parts
-              <Link className="text-primary ml-4" to="/signup">
+              <Link className="ml-4 text-primary" to="/signup">
                 Create New Account
               </Link>
             </small>
@@ -172,7 +171,7 @@ const Login = () => {
             <button
               className=" btn btn-link text-primary pe-autotext-decoration-none"
               onClick={async () => {
-                await sendPasswordResetEmail(email);
+                await sendPasswordResetEmail("email");
                 toast("Sent email");
               }}
             >
@@ -183,7 +182,7 @@ const Login = () => {
           <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            className="btn btn-outline gap-4"
+            className="gap-4 btn btn-outline"
           >
             <img className="google" src={google} alt="" />
             <span> Continue With Google</span>
