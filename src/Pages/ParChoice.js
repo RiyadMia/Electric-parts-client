@@ -5,6 +5,7 @@ import BookingMordal from "./BookingMordal";
 const ParChoice = () => {
   const [services, setServices] = Hooks([]);
   const [booking, setBooking] = useState(null);
+
   return (
     <div className="grid gap-12 mx-16 my-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {services.map((service) => (
@@ -28,6 +29,7 @@ const ParChoice = () => {
               </h2>
               <p className="font-bold text-center">Description</p>
               <p> {service.description}</p>
+              <div className=""></div>
               <div className="justify-end card-actions">
                 <div>
                   <label

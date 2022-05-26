@@ -30,7 +30,7 @@ const Profile = (id) => {
             img: img,
             address: data.address,
           };
-          const url = `http://localhost:5000/profile`;
+          const url = `https://mighty-inlet-62276.herokuapp.com/profile`;
           fetch(url, {
             method: "POST",
             headers: {

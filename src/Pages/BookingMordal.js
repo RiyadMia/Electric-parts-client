@@ -21,16 +21,10 @@ const BookingMordal = ({ booking, setBooking }) => {
     };
     const qun = event.target.quantity.value;
 
-    if (qun < 50) {
-      setError("quantity  minimam  50 ");
-      return;
+    if (qun < 10) {
+      setError("quantity  minimam  10 ");
+      return quantity;
     }
-
-    // if (qun < quantity) {
-    // console.log(quantity);
-    // setError1("quantity");
-    // return;
-    // }
 
     fetch("https://mighty-inlet-62276.herokuapp.com/booking", {
       method: "POST",
