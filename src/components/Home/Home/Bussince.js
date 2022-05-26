@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/solid";
 const Bussince = () => {
   return (
-    <div className="mb-12 text-center mb-36 ">
+    <div className="mx-20 mb-10 text-center mb-36 ">
       <h1 className="mb-5 text-4xl font-bold text-secondary">
         MILLIONS BUSINESS TRUST US
       </h1>
@@ -49,8 +49,8 @@ const Bussince = () => {
         </div>
       </div>
 
-      <div class="hero   bg-base-200">
-        <div class="hero-content flex-col lg:flex-row">
+      <div class="hero   bg-base-200   ">
+        <div class="hero-content flex-col lg:flex-row  ">
           <h1 className="text-xl font-bold text-secondary">
             Have any question about us or get a products request ?
           </h1>
