@@ -30,7 +30,7 @@ const Profile = (id) => {
             img: img,
             address: data.address,
           };
-          const url = `https://mighty-inlet-62276.herokuapp.com/user`;
+          const url = `http://localhost:5000/profile`;
           fetch(url, {
             method: "POST",
             headers: {
@@ -68,14 +68,14 @@ const Profile = (id) => {
               <input
                 type="text"
                 placeholder=" Address Type here"
-                className="input input-bordered input-lg w-full max-w-xs"
+                className="w-full max-w-xs input input-bordered input-lg"
                 {...register("address")}
               />
 
               <input
                 type="file"
                 placeholder="Photo"
-                className="input input-bordered input-lg w-full max-w-xs"
+                className="w-full max-w-xs input input-bordered input-lg"
                 {...register("image")}
               />
               <input

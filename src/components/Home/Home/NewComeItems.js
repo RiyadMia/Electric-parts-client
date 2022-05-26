@@ -6,51 +6,51 @@ import img3 from "../../../images/macanical/imf2.png";
 const NewComeItems = () => {
   return (
     <>
-      <h1 className="m-6 text-3xl font-bold text-center text-secondary ">
+      <h1 className="m-6 text-3xl font-bold text-center uppercase text-secondary ">
         New Items Comeing soon
       </h1>
       <div className="grid gap-12 mx-16 my-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
-            <img src={img1} alt="Shoes" class="rounded-xl" />
+        <div className="shadow-xl card w-96 bg-base-100">
+          <figure className="px-10 pt-10">
+            <img src={img1} alt="Shoes" className="rounded-xl" />
           </figure>
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">
-              Kits Spare <div class="badge badge-secondary">NEW</div>
+          <div className="items-center text-center card-body">
+            <h2 className="card-title">
+              Kits Spare <div className="badge badge-secondary">NEW</div>
             </h2>
 
             <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions">
-              <button class="btn btn-primary">Comeing soon</button>
+            <div className="card-actions">
+              <button className="btn btn-primary">Comeing soon</button>
             </div>
           </div>
         </div>
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
-            <img src={img2} alt="Shoes" class="rounded-xl" />
+        <div className="shadow-xl card w-96 bg-base-100">
+          <figure className="px-10 pt-10">
+            <img src={img2} alt="Shoes" className="rounded-xl" />
           </figure>
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">
-              Electric parts<div class="badge badge-secondary">NEW</div>
+          <div className="items-center text-center card-body">
+            <h2 className="card-title">
+              Electric parts<div className="badge badge-secondary">NEW</div>
             </h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions">
-              <button class="btn btn-primary">Comeing soon</button>
+            <div className="card-actions">
+              <button className="btn btn-primary">Comeing soon</button>
             </div>
           </div>
         </div>
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
-            <img src={img3} alt="Shoes" class="rounded-xl" />
+        <div className="shadow-xl card w-96 bg-base-100">
+          <figure className="px-10 pt-10">
+            <img src={img3} alt="Shoes" className="rounded-xl" />
           </figure>
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">
+          <div className="items-center text-center card-body">
+            <h2 className="card-title">
               Electric New Model
-              <div class="badge badge-secondary">NEW</div>
+              <div className="badge badge-secondary">NEW</div>
             </h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions">
-              <button class="btn btn-primary">Comeing soon</button>
+            <div className="card-actions">
+              <button className="btn btn-primary">Comeing soon</button>
             </div>
           </div>
         </div>

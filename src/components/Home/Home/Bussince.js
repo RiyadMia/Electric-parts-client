@@ -14,52 +14,52 @@ const Bussince = () => {
       <p>TRY TO UNDERSTAND USERS EXPECTATION</p>
 
       <div className="flex items-center justify-center mt-12 ">
-        <div class="stats shadow   gap-10">
-          <div class="stat">
-            <div class="stat-figure text-secondary"></div>
-            <div class="stat-title">
+        <div className="stats shadow   gap-10">
+          <div className="stat">
+            <div className="stat-figure text-secondary"></div>
+            <div className="stat-title">
               <ThumbUpIcon></ThumbUpIcon>
             </div>
-            <div class="stat-value text-secondary">532 K +</div>
-            <div class="stat-desc">Feedback</div>
+            <div className="stat-value text-secondary">532 K +</div>
+            <div className="stat-desc">Feedback</div>
           </div>
 
-          <div class="stat">
-            <div class="stat-title">
+          <div className="stat">
+            <div className="stat-title">
               <ViewGridAddIcon></ViewGridAddIcon>
             </div>
-            <div class="stat-value text-secondary">600 K +</div>
-            <div class="stat-desc">Complact project</div>
+            <div className="stat-value text-secondary">600 K +</div>
+            <div className="stat-desc">Complact project</div>
           </div>
-          <div class="stat">
-            <div class="stat-title">
+          <div className="stat">
+            <div className="stat-title">
               <UserGroupIcon></UserGroupIcon>
             </div>
-            <div class="stat-value text-secondary">500 K +</div>
-            <div class="stat-desc">Happy Client </div>
+            <div className="stat-value text-secondary">500 K +</div>
+            <div className="stat-desc">Happy Client </div>
           </div>
 
-          <div class="stat">
-            <div class="stat-title">
+          <div className="stat">
+            <div className="stat-title">
               <FlagIcon style={{ hight: "150px", width: "150px" }}></FlagIcon>
             </div>
-            <div class="stat-value text-secondary">80</div>
-            <div class="stat-desc">Countris </div>
+            <div className="stat-value text-secondary">80</div>
+            <div className="stat-desc">Countris </div>
           </div>
         </div>
       </div>
 
-      <div class="hero   bg-base-200   ">
-        <div class="hero-content flex-col lg:flex-row  ">
+      <div className="hero   bg-base-200   ">
+        <div className="hero-content flex-col lg:flex-row  ">
           <h1 className="text-xl font-bold text-secondary">
             Have any question about us or get a products request ?
           </h1>
           <p>Don't hesitate to contact us .</p>
           <div className="gap-5 ">
-            <button class="btn btn-success">Request For Quote</button>
+            <button className="btn btn-success">Request For Quote</button>
             <button className="text-secondary"></button>
 
-            <button class="btn btn-primary ml-5">Get Started</button>
+            <button className="btn btn-primary ml-5">Get Started</button>
           </div>
         </div>
       </div>
