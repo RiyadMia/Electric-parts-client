@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import Lodeing from "../../Shear/Lodeing";
 import ManageAdmin from "./ManageAdmin";
 
+import UserRow from "./UserRow";
 const ManageOrders = () => {
   const {
     data: users,
@@ -16,20 +17,36 @@ const ManageOrders = () => {
       },
     }).then((res) => res.json())
   );
+
   if (isLoading) {
     return <Lodeing></Lodeing>;
   }
 
   return (
     <div>
+      <h2 className="float-none text-2xl font-bold text-center">
+        All Users: {users.length}
+      </h2>
+
       <div className="overflow-x-auto">
-        {users.map((users) => (
-          <ManageAdmin
-            key={users._id}
-            users={users}
-            refetch={refetch}
-          ></ManageAdmin>
-        ))}
+        <table className="table w-full">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Users</th>
+              <th>Make Admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <ManageAdmin
+                key={user._id}
+                user={user}
+                refetch={refetch}
+              ></ManageAdmin>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

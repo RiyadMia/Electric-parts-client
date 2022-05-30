@@ -1,15 +1,12 @@
-import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import auth from "../../firebase.init";
-import Hooks from "../../Hooks/Hooks";
 
-const ManageAdmin = ({ users }) => {
+import { Link } from "react-router-dom";
+
+const ManageAdmin = ({ user }) => {
   const [myBooking, setMyBooking] = useState([]);
-  const { email, role } = users;
-  const [user] = useAuthState(auth);
-  const navigate = useNavigate();
+  console.log(user);
+  const { email, role } = user;
+
   useEffect(() => {
     if (user) {
       fetch(
@@ -21,24 +18,14 @@ const ManageAdmin = ({ users }) => {
           },
         }
       )
-        .then((res) => {
-          console.log("res", res);
-          if (res.status === 401 || res.status === 403) {
-            signOut(auth);
-            localStorage.removeItem("accessToken");
-            navigate("/");
-          }
-          return res.json();
-        })
+        .then((res) => res.json())
         .then((data) => setMyBooking(data));
     }
   }, [user]);
 
   return (
     <div className="mt-6 overflow-x-auto">
-      <h1 className="mt-4 mb-6 text-2xl font-bold text-center ">
-        {users.email}
-      </h1>
+      {user.email}
       <table className="table w-full">
         <thead>
           <tr>
@@ -59,10 +46,23 @@ const ManageAdmin = ({ users }) => {
               <td>{book.qun}</td>
               <td>{book.parts}</td>
               <td>
+                {book.price && !book.paid && (
+                  <Link to={`/deashbord/payment/${book._id}`}>
+                    <button className=" btn btn-xs btn-success">Pay</button>
+                  </Link>
+                )}
+
+                {book.price && !book.paid && <button>Cancel</button>}
                 {book.price && book.paid && (
                   <div className="">
                     <p>
-                      <button className=" text-success">Panding</button>
+                      <span className=" text-success">Paid</span>
+                    </p>
+                    <p>
+                      Transaction id :
+                      <span className=" text-success">
+                        {book.transactionId}
+                      </span>
                     </p>
                   </div>
                 )}

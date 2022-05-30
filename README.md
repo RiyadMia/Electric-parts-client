@@ -52,5 +52,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### Deployment
 
 \*\* Firebase
+\*\* Firebase deploy side
 
 This section has moved here: [ https://electric-parts.web.app/](https://electric-parts.web.app/)

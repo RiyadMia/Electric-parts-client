@@ -33,7 +33,7 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, perror] =
     useSendPasswordResetEmail(auth);
   const [token] = useToken(user || guser);
-  console.log(token);
+
   let siginErroe;
   const navigate = useNavigate();
   const location = useLocation();
@@ -64,13 +64,9 @@ const Login = () => {
 
   // resetPassword
 
-  // if (email) {
-  // }
-
   const resetPassword = async () => {
     const email = getValue("email");
     if (email) {
-      console.log(email);
       // await sendPasswordResetEmail(email);
       // toast("Sent email");
     } else {
